@@ -45,6 +45,7 @@ def create_melspecs():
 
         counter += 1
 
-create_melspecs()
+if __name__ == '__main__':
+    create_melspecs()
 
 
