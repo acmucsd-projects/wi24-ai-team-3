@@ -31,8 +31,8 @@ model = CNN_model_3(opt_fun=torch.optim.Adam, lr=0.001)
 # our transformations when importing the images
 transformations = tf.Compose([tf.Resize([64,64]), tf.ToTensor()])
 # load in train / test data
-trainset = ImageFolder('data/train', transform=transformations)
-testset = ImageFolder('data/test', transform=transformations)
+trainset = ImageFolder('melspecs/train', transform=transformations)
+testset = ImageFolder('melspecs/test', transform=transformations)
 # record the classes
 classes = trainset.classes
 
@@ -54,6 +54,7 @@ val_dl = DataLoader(val_ds, batch_size*2, num_workers=4)
 device = get_device() # use GPU if it is available, otherwise use CPU
 
 # if we are using GPU, then move data loaders and model to GPU as well
+print(torch.cuda.is_available())
 if torch.cuda.is_available():
     train_dl = DeviceDataLoader(train_dl, device)
     val_dl = DeviceDataLoader(val_dl, device)
