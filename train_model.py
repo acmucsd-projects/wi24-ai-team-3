@@ -44,8 +44,8 @@ train_size = len(trainset) - val_size # train length
 train_ds, val_ds = random_split(trainset, [train_size, val_size])
 
 # intialize our data loader to feed batches into the model
-train_dl = DataLoader(train_ds, batch_size, shuffle=True, num_workers=4)
-val_dl = DataLoader(val_ds, batch_size*2, num_workers=4)
+train_dl = DataLoader(train_ds, batch_size, shuffle=True, num_workers=0)
+val_dl = DataLoader(val_ds, batch_size*2, num_workers=0)
 
 
 ##########################################################

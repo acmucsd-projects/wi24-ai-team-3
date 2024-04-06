@@ -13,7 +13,7 @@ import IPython.display as ipd
 def create_melspecs():
     audio_files = glob('Dataset/*.wav')
     random.shuffle(audio_files)
-    audio_files = audio_files[0:50] # shortened dataset for testing
+    #audio_files = audio_files[0:50] # shortened dataset for testing
     twenty_percent = int(len(audio_files) * 0.2)
     counter = 0
 
